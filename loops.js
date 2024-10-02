@@ -14,6 +14,8 @@ while (index < hiddenMessage.length) {
     }
 }
 
+console.log(hiddenMessage.join(''));
+
 // EX 02 - Remove the 'X' and the even numbers
 // Hint: As this is a string you should find a way to convert into an array.
 

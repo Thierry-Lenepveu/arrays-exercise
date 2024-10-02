@@ -8,6 +8,7 @@ while (hiddenMessage.includes("X")) {
     let letter = hiddenMessage[0];
     if (letter === "X")
         hiddenMessage.shift();
+    break;
 }
 
 // EX 02 - Remove the 'X' and the even numbers

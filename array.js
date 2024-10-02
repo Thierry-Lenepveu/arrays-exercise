@@ -27,8 +27,8 @@ const waterSigns = [scorpio, pisces];
 */
 
 
-
 // ✒️ Write your code here
+fireSigns.push(sagittarius);
 
 
 
@@ -45,8 +45,8 @@ console.log(
 */
 
 
-
 // ✒️ Write your code here
+earthSigns.pop();
 
 
 
@@ -62,7 +62,7 @@ console.log(earthSigns[earthSigns.length - 1] !== "♐" ? "Good Answer ✅" : "W
 
 
 // ✒️ Write your code here
-
+airSigns.shift()
 
 
 // the line below is for testing, don't touch it :)
@@ -76,7 +76,7 @@ console.log(airSigns[0] !== "♓︎" ? "Good Answer ✅" : "Wrong Answer ❌");
 
 
 // ✒️ Write your code here
-
+waterSigns.unshift(cancer);
 
 
 // the line below is for testing, don't touch it :)

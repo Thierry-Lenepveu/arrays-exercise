@@ -23,24 +23,20 @@ const hiddenCode = "XXXXXXXXXXXXXXXXXXXXXXXXXXXCXXXXXXXOXXXXXDXXXXXXXXXXXXXXXEXX
 
 // Your code goes here
 
-arrayHiddenCode = hiddenCode.split("");
-console.log(arrayHiddenCode);
-
-letterCodeDeux = "";
-
-for (i = 0; i < arrayHiddenCode.length; i++) {
-  if (arrayHiddenCode[i] !== "X") {
-    letterCodeDeux += arrayHiddenCode[i];
-  }
+hiddenArray = hiddenCode.split('');
+index = 0;
+while (index < hiddenArray.length) {
+    if ("X" === hiddenArray[index]) {
+        hiddenArray.splice(index, 1);
+    } else {
+        number = parseInt(hiddenArray[index]);
+        if (0 === number % 2) {
+            hiddenArray.splice(index, 1);
+        }
+        else {
+            index++;
+        }
+    }
 }
-console.log(letterCodeDeux);
 
-letterCodeTrois = "";
-
-for (i = 0; i < letterCodeDeux.length; i++) {
-  if (letterCodeDeux[i] % 2 != 0) {
-    letterCodeTrois += letterCodeDeux[i];
-  }
-}
-console.log(letterCodeTrois);
 console.log(hiddenArray.join(''));

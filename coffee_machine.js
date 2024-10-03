@@ -2,8 +2,9 @@ function askItem (question, firstChoice, altChoice) {
     let item = ""
     do {
         item = prompt(question);
-        if (item == null)
+        if (item == null) {
             break;
+        }
         item.toLowerCase();
         if (item === "abort") {
             break;
@@ -28,14 +29,10 @@ if (milk) {
     vegeMilk = askItem("lait vegetal?", "oui", "non") === "oui";
 }
 
-let command = drink;
-command += ", ";
-command += withOrWithoutSugar;
-command += " sucre";
-command += ", ";
+let commandArray = [drink, withOrWithoutSugar + " sucre"];
 
 if (milk) {
-        command += vegeMilk ? "lait végétal" : "lait de vache";
+        commandArray.push(vegeMilk ? "lait végétal" : "lait de vache");
     }
 
-document.getElementsByTagName("body")[0].innerHTML += "<h1>"+command+"</h1>";
+document.getElementsByTagName("body")[0].innerHTML += "<h1>"+commandArray.join(", ")+"</h1>";

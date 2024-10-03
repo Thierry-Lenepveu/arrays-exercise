@@ -20,22 +20,27 @@ console.log(hiddenMessage.join(''));
 // Hint: As this is a string you should find a way to convert into an array.
 
 const hiddenCode = "XXXXXXXXXXXXXXXXXXXXXXXXXXXCXXXXXXXOXXXXXDXXXXXXXXXXXXXXXEXXXX XXXXXXXXXXXXXXX:X0XXXXXXX2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX3XXXXXX2XXXXXXXXX2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX4XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6XXXXXXXXXXXXXXX6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX7XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2XXXXXXXXXX8XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX8XXXXXXXXXXX4XXXXXXXXXXXX6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX4XXXXXXXXXXXXXXXXXXX9XXXX9XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2XXX4XXXXXXXXXXX6XXXXXXXXX2XXXXXXXX3XXXXXXXX2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX4XXXXX"
+
 // Your code goes here
 
-hiddenArray = hiddenCode.split('');
-index = 0;
-while (index < hiddenArray.length) {
-    if ("X" === hiddenArray[index]) {
-        hiddenArray.splice(index, 1);
-    } else {
-        number = parseInt(hiddenArray[index]);
-        if (0 === number % 2) {
-            hiddenArray.splice(index, 1);
-        }
-        else {
-            index++;
-        }
-    }
-}
+arrayHiddenCode = hiddenCode.split("");
+console.log(arrayHiddenCode);
 
+letterCodeDeux = "";
+
+for (i = 0; i < arrayHiddenCode.length; i++) {
+  if (arrayHiddenCode[i] !== "X") {
+    letterCodeDeux += arrayHiddenCode[i];
+  }
+}
+console.log(letterCodeDeux);
+
+letterCodeTrois = "";
+
+for (i = 0; i < letterCodeDeux.length; i++) {
+  if (letterCodeDeux[i] % 2 != 0) {
+    letterCodeTrois += letterCodeDeux[i];
+  }
+}
+console.log(letterCodeTrois);
 console.log(hiddenArray.join(''));

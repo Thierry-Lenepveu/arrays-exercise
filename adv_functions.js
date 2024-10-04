@@ -4,17 +4,13 @@
 // - Return the original array but with all names properly typed
 
 function refactor_names(arrayOfNames, transforName) {
-    let refactoredNames = [];
-    for (index = 0;index < arrayOfNames.length; index++)
-        refactoredNames.push(transforName(arrayOfNames[index]));
-
-    return refactoredNames.slice();
+    return arrayOfNames.map(transforName).slice();
 }
 
 const people = ['JoHn', 'ChrISTiana', 'anThoNY', 'MARia', 'jaMeS', 'MIChaEl', 'jeNNIFeR'];
 
-let refactoredNames = refactor_names(people, function(originalName) {
-    return originalName.slice(0, 1).toUpperCase() + originalName.slice(1).toLowerCase();
-})
+let refactoredNames = refactor_names(people, (originalName) =>
+    originalName.slice(0, 1).toUpperCase() + originalName.slice(1).toLowerCase()
+);
 
 console.log(refactoredNames);
